@@ -10,3 +10,4 @@ O objetivo principal deste projeto é aplicar conceitos fundamentais de programa
 
 ## Autores
 - [Gabriel Scheidt](https://github.com/Gxaite)
+- [Matheus](https://github.com/MatheussBrant)
