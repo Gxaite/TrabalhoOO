@@ -8,7 +8,9 @@ public class Program {
 
 	public static void main(String[] args) {
 		 List<Item> listaItens = new ArrayList<>();
-		 List<Cliente> listaClientes = new ArrayList<>();
+		 Cliente[] cliente = new Cliente [10];
+		 Veiculo[] veiculo = new Veiculo [10];
+		 OrdemServico[] ordemServico = new OrdemServico[10];
 
 		 // Adicionar objetos itens iniciais
 	     listaItens.add(new Peca("Óleo", 100, 50.00, "Litro", "Shell"));
@@ -27,16 +29,14 @@ public class Program {
 	     
 	     	 
 	     
-	     Veiculo veiculo1 = new Veiculo("Fiat","Corola",1995,2005,100.00,90);	     
+	     veiculo[0] = new Veiculo("Fiat","Corola",1995,2005,100.00,90);	     
+	     cliente[0] = new Cliente("Pedro", 123456789,veiculo[0]);
 	     
-	     Cliente cliente1 = new Cliente("Pedro", 123456789,veiculo1);
-	     listaClientes.add(cliente1);
-	     
-	     OrdemServico ordemServico1 = new OrdemServico("20/12/2024", "Robson", cliente1);
-	     ordemServico1.adicionarPeca(listaItens.get(0));
-	     ordemServico1.adicionarServico(listaItens.get(6));
+	     ordemServico[0] = new OrdemServico("20/12/2024", "Robson", cliente[0], 1);
+	     ordemServico[0].adicionarPeca(listaItens.get(0));
+	     ordemServico[0].adicionarServico(listaItens.get(6));
 	     	
-	     ordemServico1.resumoOrdemServico();
+	     ordemServico[0].resumoOrdemServico();
 	     
 	     
 	     //Usando o programa com JOptionPane
@@ -54,12 +54,19 @@ public class Program {
 	     int anom = Integer.parseInt(anomodelo);
 	     String kmAtual = JOptionPane.showInputDialog("Informe a kilometragem do veiculo :");
 	     double kma = Double.parseDouble(kmAtual);
-	     String nivelComb = JOptionPane.showInputDialog("Informe o nível de combustível do veiculo :");
+	     String nivelComb = JOptionPane.showInputDialog("Informe o nível de combustível do veiculo em porcentagem:");
 	     double combus = Double.parseDouble(nivelComb);	     
 	     String data = JOptionPane.showInputDialog("Informe a data da manutenção:");
 	     String mecanico = JOptionPane.showInputDialog("Informe o mecanico que realizou a manutenção:");
+	     String numOrdem = JOptionPane.showInputDialog("Informe o número da ordem de serviço");
+	     int numOrdemInt = Integer.parseInt(numOrdem);
 	     
-	     double precoCalculado = 0;
+	     
+	     veiculo[1] = new Veiculo(marcaVeiculo, modeloVeiculo, ano, anom, kma, combus);
+	     cliente[1] = new Cliente(nomeCliente, cpfInt, veiculo[1]);
+	     ordemServico[1] = new OrdemServico(data, mecanico, cliente[1],numOrdemInt);
+
+	     
 	     String[] nomesItens = new String[listaItens.size()];
 	     for (int i = 0; i < listaItens.size(); i++) {
 	         nomesItens[i] = listaItens.get(i).getDescricao(); 
@@ -80,22 +87,14 @@ public class Program {
 	        }
 
 	        if (indiceItemSelecionado >= 0) {
-	            
-	        	
-	            
-	            double preco = listaItens.get(indiceItemSelecionado).getPreco();
-	            precoCalculado = preco;
+	            ordemServico[1].setPrecoOrdemServico(listaItens.get(indiceItemSelecionado).getPreco());
+	            if(listaItens.get(indiceItemSelecionado) instanceof Servico) {
+	            	Servico servico = (Servico) listaItens.get(indiceItemSelecionado);
+	            	ordemServico[1].setTempoTotalServico(servico.getQuantidadeHoras());
+	            }
 
 	        }
-	     
-	    
-	     Veiculo veiculo2 = new Veiculo(marcaVeiculo, modeloVeiculo, ano, anom, kma, combus);
-	     Cliente cliente2 = new Cliente(nomeCliente, cpfInt, veiculo2);
-	     listaClientes.add(cliente2);
-	     OrdemServico ordemServico2 = new OrdemServico(data, mecanico, cliente2);
-	     JOptionPane.showMessageDialog(null, cliente2.getNomeCliente()+ " " + "realizou uma manuetenção no dia" + " " + ordemServico2.getDataManutencao() + " " + "em seu veículo " + " "+ veiculo2.getMarca()+ " " 
-	     + veiculo2.getModelo()+ " " + "no valor de" + " " + precoCalculado );
-	    
+	     ordemServico[1].resumoOrdemServico();	    
 	     
 	}
 

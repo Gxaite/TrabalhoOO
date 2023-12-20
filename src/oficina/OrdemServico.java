@@ -12,15 +12,19 @@ public class OrdemServico {
 	private List<Item> itens;
 	private double precoOrdemServico;
 	private int tempoTotalServico;
+	private int numeroOrdem;
 	
-	public OrdemServico(String dataManutencao, String mecanico, Cliente cliente) {
+	public OrdemServico(String dataManutencao, String mecanico, Cliente cliente, int numeroOrdem) {
 		this.setCliente(cliente);
 		this.setDataManutencao(dataManutencao);
 		this.setMecanico(mecanico);
 		this.setPrecoOrdemServico(0);
 		this.itens = new ArrayList<>();
+		this.setNumeroOrdem(numeroOrdem);
 	}
-	
+	public OrdemServico() {
+		
+	}
 	
 	public void adicionarPeca(Item item) {
 		this.itens.add(item);
@@ -37,12 +41,13 @@ public class OrdemServico {
 	public void resumoOrdemServico() {
 		JOptionPane.showMessageDialog(
 		        null,
-		        "O serviço prestado no dia " + this.getDataManutencao() +
-		                " pelo mecânico " + this.getMecanico() +
-		                " foi solicitado pelo Cliente " + this.getCliente().getNomeCliente() +
-		                ", o serviço prestado teve os itens " + this.nomesItensListas() +
-		                " selecionados e o custo total da operação foi de R$" + this.getPrecoOrdemServico() +
-		                " e levou " + this.getTempoTotalServico() + " horas para ser realizado",
+		        "ORDEM DE SERIÇO Nº"+this.getNumeroOrdem()+
+		        "\n O serviço prestado no dia " + this.getDataManutencao() +
+		                "\n Foi realizado pelo(a) mecânico " + this.getMecanico() +
+		                "\n Foi solicitado pelo(a) Cliente " + this.getCliente().getNomeCliente() +
+		                ",\n Os itens selecionados: " + this.nomesItensListas() +
+		                "\n  O custo total da operação foi de R$" + this.getPrecoOrdemServico() +
+		                "\n Levou " + this.getTempoTotalServico() + " horas para ser realizado",
 		        "Detalhes da Ordem de Serviço",
 		        JOptionPane.INFORMATION_MESSAGE
 		);
@@ -105,6 +110,12 @@ public class OrdemServico {
 
 	public void setItens(List<Item> itens) {
 		this.itens = itens;
+	}
+	public int getNumeroOrdem() {
+		return numeroOrdem;
+	}
+	public void setNumeroOrdem(int numeroOrdem) {
+		this.numeroOrdem = numeroOrdem;
 	}
 	
 	
