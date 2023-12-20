@@ -20,6 +20,15 @@ public class Program {
 	     listaItens.add(new Servico("Troca retrovisor", 105, 200.00, 2));
 	     listaItens.add(new Servico("Trocar bateria", 107, 150.00, 1));
 	     listaItens.add(new Servico("Trocar filtro", 109, 75.00, 1));
+	     	 
+	     
+	     Veiculo veiculo1 = new Veiculo("Fiat","Corola",1995,2005,100.00,90);
+	     
+	     Cliente cliente1 = new Cliente();
+	     cliente1.setNomeCliente("Pedro");
+	     cliente1.setCpf(1551);
+	     cliente1.setVeiculo(veiculo1);
+	     
 	     
 	     
 	     Veiculo corsinha = new Veiculo("Ford", "Corsa", 2000, 2010, 215.5, 50);
@@ -34,7 +43,7 @@ public class Program {
 	     ordemServico1.adicionarPeca(listaItens.get(0));
 	     ordemServico1.adicionarServico(listaItens.get(6));
 	     	
-	     System.out.println(ordemServico1.getPrecoOrdemServico());
+	     ordemServico1.resumoOrdemServico();
 	     
 	     
 	     

@@ -32,6 +32,17 @@ public class OrdemServico {
 		this.setTempoTotalServico(this.getTempoTotalServico()+s.getQuantidadeHoras());
 	}
 	
+	public void resumoOrdemServico() {
+		System.out.println("O serviço prestado no dia "+this.getDataManutencao()+" pelo mecânico "+this.getMecanico()+
+	    		 " foi solicitado pelo Cliente "+this.getCliente().getNomeCliente()+", o serviço prestado teve os itens "+ this.getItens()+ " selecionados e o custo total da operação foi de R$"
+	    		 +this.getPrecoOrdemServico()+" e levou "+this.getTempoTotalServico()+" horas para ser realizado");
+	}
+	public String nomesItensListas() {
+		  for (Item item : itens) {
+	            nomes.append(item.getCodigo()).append(", ");
+	        }
+	}
+	
 	public String getDataManutencao() {
 		return dataManutencao;
 	}
@@ -83,6 +94,9 @@ public class OrdemServico {
 	public void setItens(List<Item> itens) {
 		this.itens = itens;
 	}
+	
+	
+	
 	
 	
 	
