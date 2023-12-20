@@ -9,7 +9,7 @@ Este repositório contém o código fonte e a documentação associada ao trabal
 O objetivo principal deste projeto é aplicar conceitos fundamentais de programação orientada a objetos para criar um sistema de oficina. O trabalho visa demonstrar a compreensão dos princípios OOP, como encapsulamento, herança, e polimorfismo.
 
 ## Autores
-- [GABRIEL REIS SCHEIDT PAULINO](https://github.com/Gxaite)
-- [MATHEUS DE SIQUEIRA BRANT](https://github.com/MatheussBrant)
-- [ANA JOYCE GUEDES AMORIM DA SILVA](https://github.com/anajoyceamorim)
-- [NATHAN BENIGNO PONCE DE ABREU](https://github.com/nateejpg)
+- [GABRIEL REIS SCHEIDT PAULINO - 222015112](https://github.com/Gxaite)
+- [MATHEUS DE SIQUEIRA BRANT - 222037737](https://github.com/MatheussBrant)
+- [ANA JOYCE GUEDES AMORIM DA SILVA - 211031566](https://github.com/anajoyceamorim)
+- [NATHAN BENIGNO PONCE DE ABREU - 221022696](https://github.com/nateejpg)
