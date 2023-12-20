@@ -15,5 +15,7 @@ O objetivo principal deste projeto é aplicar conceitos fundamentais de programa
 - [NATHAN BENIGNO PONCE DE ABREU - 221022696](https://github.com/nateejpg)
 
 # Forma de execução do programa
-# 01-Termial
-# 02-JOptionPane
+
+## 01-Termial
+  
+## 02-JOptionPane
