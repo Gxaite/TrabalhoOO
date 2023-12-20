@@ -3,6 +3,8 @@ package oficina;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 public class OrdemServico {
 	private String dataManutencao;
 	private String mecanico;
@@ -33,9 +35,17 @@ public class OrdemServico {
 	}
 	
 	public void resumoOrdemServico() {
-		System.out.println("O serviço prestado no dia "+this.getDataManutencao()+" pelo mecânico "+this.getMecanico()+
-	    		 " foi solicitado pelo Cliente "+this.getCliente().getNomeCliente()+", o serviço prestado teve os itens "+ this.nomesItensListas()+ " selecionados e o custo total da operação foi de R$"
-	    		 +this.getPrecoOrdemServico()+" e levou "+this.getTempoTotalServico()+" horas para ser realizado");
+		JOptionPane.showMessageDialog(
+		        null,
+		        "O serviço prestado no dia " + this.getDataManutencao() +
+		                " pelo mecânico " + this.getMecanico() +
+		                " foi solicitado pelo Cliente " + this.getCliente().getNomeCliente() +
+		                ", o serviço prestado teve os itens " + this.nomesItensListas() +
+		                " selecionados e o custo total da operação foi de R$" + this.getPrecoOrdemServico() +
+		                " e levou " + this.getTempoTotalServico() + " horas para ser realizado",
+		        "Detalhes da Ordem de Serviço",
+		        JOptionPane.INFORMATION_MESSAGE
+		);
 	}
 	public String nomesItensListas() {
 		StringBuilder codigos = new StringBuilder();
