@@ -14,6 +14,6 @@ O objetivo principal deste projeto é aplicar conceitos fundamentais de programa
 - [ANA JOYCE GUEDES AMORIM DA SILVA - 211031566](https://github.com/anajoyceamorim)
 - [NATHAN BENIGNO PONCE DE ABREU - 221022696](https://github.com/nateejpg)
 
-#Forma de execução do programa
-#01-Termial
-#02-JOptionPane
+# Forma de execução do programa
+# 01-Termial
+# 02-JOptionPane
