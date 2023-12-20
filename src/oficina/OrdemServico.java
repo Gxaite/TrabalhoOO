@@ -34,13 +34,15 @@ public class OrdemServico {
 	
 	public void resumoOrdemServico() {
 		System.out.println("O serviço prestado no dia "+this.getDataManutencao()+" pelo mecânico "+this.getMecanico()+
-	    		 " foi solicitado pelo Cliente "+this.getCliente().getNomeCliente()+", o serviço prestado teve os itens "+ this.getItens()+ " selecionados e o custo total da operação foi de R$"
+	    		 " foi solicitado pelo Cliente "+this.getCliente().getNomeCliente()+", o serviço prestado teve os itens "+ this.nomesItensListas()+ " selecionados e o custo total da operação foi de R$"
 	    		 +this.getPrecoOrdemServico()+" e levou "+this.getTempoTotalServico()+" horas para ser realizado");
 	}
 	public String nomesItensListas() {
+		StringBuilder codigos = new StringBuilder();
 		  for (Item item : itens) {
-	            nomes.append(item.getCodigo()).append(", ");
+			  codigos.append(item.getDescricao()).append(", ");
 	        }
+		return codigos.toString();
 	}
 	
 	public String getDataManutencao() {
