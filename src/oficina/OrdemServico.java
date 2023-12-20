@@ -14,19 +14,19 @@ public class OrdemServico {
 		this.setCliente(cliente);
 		this.setDataManutencao(dataManutencao);
 		this.setMecanico(mecanico);
-		this.itens = new ArrayList<>();
 		this.setPrecoOrdemServico(0);
+		this.itens = new ArrayList<>();
 	}
 	
 	
-	public void adicionarPeca(Peca peca) {
-		this.itens.add(peca);
-		this.setPrecoOrdemServico(getPrecoOrdemServico()+peca.getPreco());
+	public void adicionarPeca(Item item) {
+		this.itens.add(item);
+		this.setPrecoOrdemServico(getPrecoOrdemServico()+item.getPreco());
 	}
 	
-	public void adicionarServico(Servico servico){
-		this.itens.add(servico);
-		this.setPrecoOrdemServico(getPrecoOrdemServico()+ servico.getPreco());
+	public void adicionarServico(Item item){
+		this.itens.add(item);
+		this.setPrecoOrdemServico(getPrecoOrdemServico()+ item.getPreco());
 	}
 	
 	public String getDataManutencao() {
