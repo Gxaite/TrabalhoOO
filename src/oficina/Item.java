@@ -12,6 +12,9 @@ public class Item {
 		this.setCodigo(codigo);
 		this.setPreco(preco);
 	}
+	public Item() {	
+	}
+	
 	public String getDescricao() {
 		return descricao;
 	}

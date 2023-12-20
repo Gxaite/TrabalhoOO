@@ -1,9 +1,6 @@
 package oficina;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Cliente {
-	public List<Cliente> listaClientes = new ArrayList<>();
 	private String nomeCliente;
 	private int cpf;
 	private Veiculo veiculo;
@@ -13,6 +10,8 @@ public class Cliente {
 		this.setCpf(cpf);
 		this.setVeiculo(veiculo);
 		
+	}
+	public Cliente() {	
 	}
 	
 	public String getNomeCliente() {

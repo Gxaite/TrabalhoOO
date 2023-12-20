@@ -9,6 +9,7 @@ public class OrdemServico {
 	private Cliente cliente;
 	private List<Item> itens;
 	private double precoOrdemServico;
+	private int tempoTotalServico;
 	
 	public OrdemServico(String dataManutencao, String mecanico, Cliente cliente) {
 		this.setCliente(cliente);
@@ -27,6 +28,8 @@ public class OrdemServico {
 	public void adicionarServico(Item item){
 		this.itens.add(item);
 		this.setPrecoOrdemServico(getPrecoOrdemServico()+ item.getPreco());
+		Servico s = (Servico) item;
+		this.setTempoTotalServico(this.getTempoTotalServico()+s.getQuantidadeHoras());
 	}
 	
 	public String getDataManutencao() {
@@ -59,6 +62,26 @@ public class OrdemServico {
 
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
+	}
+
+
+	public int getTempoTotalServico() {
+		return tempoTotalServico;
+	}
+
+
+	public void setTempoTotalServico(int tempoTotalServico) {
+		this.tempoTotalServico = tempoTotalServico;
+	}
+
+
+	public List<Item> getItens() {
+		return itens;
+	}
+
+
+	public void setItens(List<Item> itens) {
+		this.itens = itens;
 	}
 	
 	

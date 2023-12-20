@@ -1,12 +1,14 @@
 package oficina;
 
-public class Peca extends Item{
+public final class  Peca extends Item{
 	private String unidade;
 	private String marca;
 
 	public Peca(String descricao, int codigo, double preco, String unidade, String marca) {
 		super(descricao, codigo, preco);
 		this.setUnidade(unidade);
+	}
+	public Peca() {	
 	}
 
 	public String getUnidade() {

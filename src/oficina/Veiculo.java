@@ -17,6 +17,8 @@ public class Veiculo {
 		this.setKmAtual(kmAtual);
 		this.setNivelCombustivel(nivelCombustivel);
 	}
+	public Veiculo() {	
+	}
 	
 	
 	public String getMarca() {

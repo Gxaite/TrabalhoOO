@@ -1,12 +1,14 @@
 package oficina;
 
-public class Servico extends Item {
+public final class Servico extends Item {
 	private int quantidadeHoras;
 	
 
 	public Servico(String descricao, int codigo, double preco, int quantidadeHoras) {
 		super(descricao, codigo, preco);
 		this.setQuantidadeHoras(quantidadeHoras);
+	}
+	public Servico() {
 	}
 
 	public int getQuantidadeHoras() {

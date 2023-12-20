@@ -23,12 +23,17 @@ public class Program {
 	     
 	     
 	     Veiculo corsinha = new Veiculo("Ford", "Corsa", 2000, 2010, 215.5, 50);
+	     
+	     
+	     
+	     
 	     Cliente pedro = new Cliente("Pedro", 123456789,corsinha);
 	     listaClientes.add(pedro);
 	     
 	     OrdemServico ordemServico1 = new OrdemServico("20/12/2024", "Robson", pedro);
 	     ordemServico1.adicionarPeca(listaItens.get(0));
 	     ordemServico1.adicionarServico(listaItens.get(6));
+	     	
 	     System.out.println(ordemServico1.getPrecoOrdemServico());
 	     
 	     
